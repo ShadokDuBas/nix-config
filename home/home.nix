@@ -124,6 +124,7 @@
       qrencode
       swayimg
       swaybg
+      pcloud
     ];
 
   news.display = "silent";

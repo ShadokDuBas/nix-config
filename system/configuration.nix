@@ -63,6 +63,7 @@
     "steam"
     "steam-unwrapped"
     "discord"
+    "pcloud"
   ];
 
   # Enable the X11 windowing system.
