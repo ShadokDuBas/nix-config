@@ -125,6 +125,7 @@
       swayimg
       swaybg
       pcloud
+      keepassxc
     ];
 
   news.display = "silent";
