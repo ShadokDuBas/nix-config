@@ -1,4 +1,6 @@
 # TODO: add skim or fzf
+# TODO: add starship
+# TODO: mettre les trucs comme cargo et ocaml dans des profils
 {pkgs, ...} :
 
 {
@@ -119,7 +121,7 @@
 
   home.packages = with pkgs; 
     [ gnome-tweaks
-      texliveMedium # replace by texliveFull if packages are missing
+      texliveFull
       discord
       qrencode
       swayimg
