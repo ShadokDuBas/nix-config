@@ -1,5 +1,4 @@
 # TODO: add skim or fzf
-# TODO: add starship
 # TODO: mettre les trucs comme cargo et ocaml dans des profils
 {pkgs, ...} :
 
@@ -102,6 +101,12 @@
 
   programs.atuin = {
     enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
     enableFishIntegration = true;
   };
 
