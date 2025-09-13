@@ -110,6 +110,8 @@
     enableFishIntegration = true;
   };
 
+  programs.bat.enable = true;
+
   programs.wofi.enable = true;
 
   services.gammastep = {
