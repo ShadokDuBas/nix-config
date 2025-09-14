@@ -49,6 +49,13 @@
 
   programs.ripgrep.enable = true;
 
+  programs.nushell = {
+    enable = true;
+    settings = {
+      show_banner = false;
+    };
+  };
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -102,6 +109,7 @@
   programs.atuin = {
     enable = true;
     enableFishIntegration = true;
+    enableNushellIntegration = true;
   };
 
   programs.starship = {
