@@ -77,10 +77,16 @@
 
   programs.git = {
     enable = true;
-    userName = "Vincent";
-    userEmail = "vincent.peth@free.fr";
-    aliases = {
-      graph = "log --graph --oneline --decorate --all";
+    settings = {
+      alias = {
+        graph = "log --graph --oneline --decorate --all";
+      };
+      user = {
+        name = "Vincent Peth";
+        email = "vincent.peth@free.fr";
+      };
+      core.editor="nvim";
+      init.defaultBranch = "main";
     };
     ignores = [
       "*~"
@@ -93,12 +99,6 @@
       "*.blg"
       "target/"
     ];
-    extraConfig = {
-      init={
-        defaultBranch = "main";
-      };
-      core.editor="nvim";
-    };
   };
 
   programs.alacritty = {
