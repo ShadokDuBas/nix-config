@@ -134,6 +134,25 @@
 
   programs.waybar.enable = true;
 
+  programs.yazi = {
+    enable = true;
+    settings = {
+      mgr = {
+        show_hidden = true;
+      };
+    };
+  };
+
+  programs.sioyek = {
+    enable = true;
+    config = {
+      "ruler_display_mode" = "slit";
+      "should_launch_new_window" = "1";
+    };
+  };
+
+  # programs.gpg.enable = true; # -> configuration.nix
+
   home.packages = with pkgs; 
     [ gnome-tweaks
       texliveFull
@@ -143,6 +162,19 @@
       swaybg
       pcloud
       keepassxc
+      tldr
+      neomutt
+      mutt-wizard
+      isync
+      msmtp
+      pass-wayland
+      abook
+      lynx
+      notmuch
+      moreutils
+      gum
+      fzf
+      vlc
     ];
 
   news.display = "silent";
