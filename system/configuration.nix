@@ -159,6 +159,8 @@
     dedicatedServer.openFirewall = true;
   };
 
+  programs.gnupg.agent.enable = true;
+
   # fontes :
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
@@ -174,6 +176,7 @@
     wl-clipboard
     slurp
     gnumake
+    kanata
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
