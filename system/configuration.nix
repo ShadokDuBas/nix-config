@@ -101,6 +101,7 @@
     enable = true;
     wrapperFeatures.gtk = true;
   };
+  programs.niri.enable = true;
 
 
   # Configure keymap in X11
@@ -177,6 +178,7 @@
     slurp
     gnumake
     kanata
+    xwayland-satellite
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

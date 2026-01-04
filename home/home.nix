@@ -1,4 +1,3 @@
-# TODO: add skim or fzf
 # TODO: mettre les trucs comme cargo et ocaml dans des profils
 {pkgs, ...} :
 
@@ -175,6 +174,8 @@
       gum
       fzf
       vlc
+      wlr-which-key
+      hledger
     ];
 
   news.display = "silent";
