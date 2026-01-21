@@ -103,6 +103,7 @@
   programs.alacritty = {
     enable = true;
     theme = "kanagawa_dragon";
+    settings.font.size = 14;
   };
 
   programs.atuin = {
