@@ -177,6 +177,8 @@
       vlc
       wlr-which-key
       hledger
+      aspell
+      aspellDicts.en
     ];
 
   news.display = "silent";
