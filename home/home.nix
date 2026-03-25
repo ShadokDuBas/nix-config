@@ -179,6 +179,9 @@
       hledger
       aspell
       aspellDicts.en
+      aspellDicts.fr
+      poppler-utils # pdfunite / separate
+      pandoc
     ];
 
   news.display = "silent";
