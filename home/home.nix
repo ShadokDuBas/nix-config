@@ -153,7 +153,11 @@
 
   # programs.gpg.enable = true; # -> configuration.nix
 
-  home.packages = with pkgs; 
+
+  home.packages =
+    let mycoq = pkgs.coq.withPackages (ps: with ps; [ equations stdlib metarocq
+      ]); in
+    with pkgs; 
     [ gnome-tweaks
       texliveFull
       discord
@@ -182,6 +186,9 @@
       aspellDicts.fr
       poppler-utils # pdfunite / separate
       pandoc
+      mycoq
+      mycoq.ocamlPackages.findlib 
+      zotero
     ];
 
   news.display = "silent";
