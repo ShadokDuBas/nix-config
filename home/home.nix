@@ -28,6 +28,10 @@
     #   EDITOR = "nvim";
     # };
     stateVersion = "25.11"; # Never change this
+    # shell = {
+    #   enableFishIntegration = true;
+    #   enableNushellIntegration = true;
+    # };
   };
   
   manual.html.enable = true;
@@ -64,7 +68,7 @@
 
   # make fish the default shell
   programs.bash = {
-    enable= true;
+    enable = true;
     initExtra = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
         then
@@ -72,6 +76,11 @@
           exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
           fi
     '';
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   programs.git = {
@@ -177,7 +186,6 @@
       notmuch
       moreutils
       gum
-      fzf
       vlc
       wlr-which-key
       hledger
