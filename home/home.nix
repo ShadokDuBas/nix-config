@@ -151,6 +151,8 @@
     };
   };
 
+  aerc.enable = true;
+
   # gpg.enable = true; # -> configuration.nix
   };
 
