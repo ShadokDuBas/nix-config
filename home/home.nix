@@ -37,29 +37,30 @@
   manual.html.enable = true;
 
 
-  programs.neovim = {
+  programs = {
+  neovim = {
     enable = true;
     defaultEditor = true;
   };
 
   # needed so that nvim-treesitter can compile parsers
-  programs.gcc = {
+  gcc = {
     enable = true;
     colors = {error = "01;31";};
   };
 
-  programs.firefox.enable = true;
+  firefox.enable = true;
 
-  programs.ripgrep.enable = true;
+  ripgrep.enable = true;
 
-  programs.nushell = {
+  nushell = {
     enable = true;
     settings = {
       show_banner = false;
     };
   };
 
-  programs.fish = {
+  fish = {
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # disable greeting
@@ -67,7 +68,7 @@
   };
 
   # make fish the default shell
-  programs.bash = {
+  bash = {
     enable = true;
     initExtra = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
@@ -78,12 +79,12 @@
     '';
   };
 
-  programs.fzf = {
+  fzf = {
     enable = true;
     enableFishIntegration = true;
   };
 
-  programs.git = {
+  git = {
     enable = true;
     settings = {
       alias = {
@@ -109,27 +110,49 @@
     ];
   };
 
-  programs.alacritty = {
+  alacritty = {
     enable = true;
     theme = "kanagawa_dragon";
     settings.font.size = 14;
   };
 
-  programs.atuin = {
+  atuin = {
     enable = true;
     enableFishIntegration = true;
     enableNushellIntegration = true;
   };
 
-  programs.starship = {
+  starship = {
     enable = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
   };
 
-  programs.bat.enable = true;
+  bat.enable = true;
 
-  programs.wofi.enable = true;
+  wofi.enable = true;
+
+  waybar.enable = true;
+
+  yazi = {
+    enable = true;
+    settings = {
+      mgr = {
+        show_hidden = true;
+      };
+    };
+  };
+
+  sioyek = {
+    enable = true;
+    config = {
+      "ruler_display_mode" = "slit";
+      "should_launch_new_window" = "1";
+    };
+  };
+
+  # gpg.enable = true; # -> configuration.nix
+  };
 
   services.gammastep = {
     enable = true;
@@ -140,27 +163,6 @@
     dawnTime = "6:00-7:45";
     duskTime = "16:00-17:45";
   };
-
-  programs.waybar.enable = true;
-
-  programs.yazi = {
-    enable = true;
-    settings = {
-      mgr = {
-        show_hidden = true;
-      };
-    };
-  };
-
-  programs.sioyek = {
-    enable = true;
-    config = {
-      "ruler_display_mode" = "slit";
-      "should_launch_new_window" = "1";
-    };
-  };
-
-  # programs.gpg.enable = true; # -> configuration.nix
 
 
   home.packages =
