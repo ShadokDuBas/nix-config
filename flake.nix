@@ -15,11 +15,11 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system;  };
       username = "vincent";
-      home-module = {
+      make-home-module = path: {
         home-manager = {
           useGlobalPkgs = true;
 	  users.${username} = {
-	    imports = [ ./home/home.nix ];
+	    imports = [ path ];
 	    config.home = {
               inherit username;
 	      homeDirectory = "/home/${username}";
@@ -41,10 +41,10 @@
 	semigroup = nixosSystem {
           inherit system;
 	  modules = [
-	    ./system/configuration.nix
+	    ./system/semigroup
 	    home-manager.nixosModules.home-manager
 	    nix-module
-	    home-module
+	    (make-home-module (./home/home.nix))
 	  ];
         };
       };
