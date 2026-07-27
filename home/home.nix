@@ -33,132 +33,137 @@
     #   enableNushellIntegration = true;
     # };
   };
-  
+
   manual.html.enable = true;
 
 
   programs = {
-  # moved to configuration to avoid conflict with my config
-  # neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  # };
+    # moved to configuration to avoid conflict with my config
+    # neovim = {
+    #   enable = true;
+    #   defaultEditor = true;
+    # };
 
-  # needed so that nvim-treesitter can compile parsers
-  gcc = {
-    enable = true;
-    colors = {error = "01;31";};
-  };
-
-  firefox.enable = true;
-
-  ripgrep.enable = true;
-
-  nushell = {
-    enable = true;
-    settings = {
-      show_banner = false;
+    # needed so that nvim-treesitter can compile parsers
+    gcc = {
+      enable = true;
+      colors = {error = "01;31";};
     };
-  };
 
-  fish = {
-    enable = true;
-    interactiveShellInit = ''
+    firefox = {
+      enable = true;
+      configPath = "$HOME/.config/mozilla/firefox";
+    };
+
+    ripgrep.enable = true;
+
+    nushell = {
+      enable = true;
+      settings = {
+        show_banner = false;
+      };
+    };
+
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
       set fish_greeting # disable greeting
       '';
-  };
+    };
 
-  # make fish the default shell
-  bash = {
-    enable = true;
-    initExtra = ''
+    # make fish the default shell
+    bash = {
+      enable = true;
+      initExtra = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
         then
           shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
           exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
           fi
-    '';
-  };
-
-  fzf = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  git = {
-    enable = true;
-    settings = {
-      alias = {
-        graph = "log --graph --oneline --decorate --all";
-      };
-      user = {
-        name = "Vincent Peth";
-        email = "vincent.peth@free.fr";
-      };
-      core.editor="nvim";
-      init.defaultBranch = "main";
-      pull.rebase = "false";
+      '';
     };
-    ignores = [
-      "*~"
-      "*.swp"
-      "*.log"
-      "*.aux"
-      "*.out"
-      "*.toc"
-      "*.bbl"
-      "*.blg"
-      "target/"
-    ];
-  };
 
-  alacritty = {
-    enable = true;
-    theme = "kanagawa_dragon";
-    settings.font = {
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+      historyWidget.command = "";
+    };
+
+    git = {
+      enable = true;
+      settings = {
+        alias = {
+          graph = "log --graph --oneline --decorate --all";
+        };
+        user = {
+          name = "Vincent Peth";
+          email = "vincent.peth@free.fr";
+        };
+        core.editor="nvim";
+        init.defaultBranch = "main";
+        pull.rebase = "false";
+      };
+      ignores = [
+        "*~"
+        "*.swp"
+        "*.log"
+        "*.aux"
+        "*.out"
+        "*.toc"
+        "*.bbl"
+        "*.blg"
+        "target/"
+      ];
+    };
+
+    alacritty = {
+      enable = true;
+      theme = "kanagawa_dragon";
+      settings.font = {
         size = 14;
         normal.family = "FiraCode Nerd Font";
-    };
-  };
-
-  atuin = {
-    enable = true;
-    enableFishIntegration = true;
-    enableNushellIntegration = true;
-  };
-
-  starship = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-  };
-
-  bat.enable = true;
-
-  wofi.enable = true;
-
-  waybar.enable = true;
-
-  yazi = {
-    enable = true;
-    settings = {
-      mgr = {
-        show_hidden = true;
       };
     };
-  };
 
-  sioyek = {
-    enable = true;
-    config = {
-      "ruler_display_mode" = "slit";
-      "should_launch_new_window" = "1";
+    atuin = {
+      enable = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
     };
-  };
 
-  aerc.enable = true;
+    starship = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+    };
 
-  # gpg.enable = true; # -> configuration.nix
+    bat.enable = true;
+
+    wofi.enable = true;
+
+    waybar.enable = true;
+
+    yazi = {
+      enable = true;
+      settings = {
+        mgr = {
+          show_hidden = true;
+        };
+      };
+      shellWrapperName = "y";
+    };
+
+    sioyek = {
+      enable = true;
+      config = {
+        "ruler_display_mode" = "slit";
+        "should_launch_new_window" = "1";
+      };
+    };
+
+    aerc.enable = true;
+
+    # gpg.enable = true; # -> configuration.nix
   };
 
   services.gammastep = {
@@ -174,8 +179,8 @@
 
   home.packages =
     let mycoq = pkgs.coq.withPackages (ps: with ps; [ equations stdlib metarocq
-      ]); in
-    with pkgs; 
+    ]); in
+      with pkgs; 
     [ gnome-tweaks
       texliveFull
       discord
