@@ -38,10 +38,11 @@
 
 
   programs = {
-  neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
+  # moved to configuration to avoid conflict with my config
+  # neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  # };
 
   # needed so that nvim-treesitter can compile parsers
   gcc = {
@@ -96,6 +97,7 @@
       };
       core.editor="nvim";
       init.defaultBranch = "main";
+      pull.rebase = "false";
     };
     ignores = [
       "*~"
@@ -113,7 +115,10 @@
   alacritty = {
     enable = true;
     theme = "kanagawa_dragon";
-    settings.font.size = 14;
+    settings.font = {
+        size = 14;
+        normal.family = "FiraCode Nerd Font";
+    };
   };
 
   atuin = {
@@ -201,6 +206,7 @@
       mycoq
       mycoq.ocamlPackages.findlib 
       zotero
+      typst
     ];
 
   news.display = "silent";
