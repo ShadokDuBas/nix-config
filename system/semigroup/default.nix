@@ -13,6 +13,7 @@
       ../commons/nix-settings.nix
       ../commons/basic-programs.nix
       ../commons/graphics.nix
+      ../commons/fonts.nix
     ];
 
   networking.hostName = "semigroup"; # Define your hostname.
@@ -43,6 +44,11 @@
 
   environment.systemPackages = [pkgs.kanata];
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
