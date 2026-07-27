@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../commons/boot.nix
       ../commons/bluetooth.nix
       ../commons/misc.nix
       ../commons/locale.nix
@@ -13,7 +14,6 @@
       ../commons/basic-programs.nix
     ];
 
-  boot = import ../commons/boot.nix;
 
   networking.hostName = "semigroup"; # Define your hostname.
 
@@ -41,7 +41,7 @@
     };
   };
 
-  environment.systemPackages = [pkgs.kanata]
+  environment.systemPackages = [pkgs.kanata];
 
 
   # This option defines the first version of NixOS you have installed on this particular machine,

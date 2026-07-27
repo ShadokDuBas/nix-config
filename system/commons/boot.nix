@@ -1,3 +1,5 @@
+{ config, lib, pkgs, ... }:
+
 {
   # Use the systemd-boot EFI boot loader.
   loader = {
@@ -10,4 +12,4 @@
   };
   # Use latest kernel.
   kernelPackages = pkgs.linuxPackages_latest;
-};
+}
