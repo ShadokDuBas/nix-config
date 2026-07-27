@@ -1,15 +1,17 @@
 { config, lib, pkgs, ... }:
 
-{
-  # Use the systemd-boot EFI boot loader.
-  loader = {
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
+{ boot =
+  {
+    # Use the systemd-boot EFI boot loader.
+    loader = {
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
+    # Use latest kernel.
+    kernelPackages = pkgs.linuxPackages_latest;
   };
-  # Use latest kernel.
-  kernelPackages = pkgs.linuxPackages_latest;
 }
