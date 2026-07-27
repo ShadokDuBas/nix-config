@@ -12,8 +12,8 @@
       ../commons/sound.nix
       ../commons/nix-settings.nix
       ../commons/basic-programs.nix
+      ../commons/graphics.nix
     ];
-
 
   networking.hostName = "semigroup"; # Define your hostname.
 
