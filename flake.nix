@@ -38,15 +38,26 @@
       };
     in {
       nixosConfigurations = {
+
 	semigroup = nixosSystem {
           inherit system;
 	  modules = [
 	    ./system/semigroup
 	    home-manager.nixosModules.home-manager
 	    nix-module
-	    (make-home-module (./home/home.nix))
+	    (make-home-module (./home/semigroup))
 	  ];
         };
+
+        bootable-stick = nixosSystem {
+          inherit system;
+          modules = [
+            ./system/bootable-stick
+	    home-manager.nixosModules.home-manager
+	    nix-module
+	    (make-home-module (./home/bootable-stick))
+          ];
+        }
       };
     };
 }
