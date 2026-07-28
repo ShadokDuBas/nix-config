@@ -28,5 +28,6 @@
       tldr
       moreutils
       gum
+      tree
     ];
 }

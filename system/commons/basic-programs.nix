@@ -18,6 +18,5 @@
     wget
     btop
     gnumake
-    xwayland-satellite
   ];
 }

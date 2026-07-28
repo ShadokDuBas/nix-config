@@ -26,5 +26,5 @@
       swayimg
       swaybg
       wlr-which-key
-    ]
+    ];
 }
