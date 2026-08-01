@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, self, ... }:
     let
       # same as:
       # nixosSystem = pkgs.lib.nixosSystem;
@@ -49,15 +49,34 @@
 	  ];
         };
 
-        bootable-stick = nixosSystem {
+	    #    bootable-stick = nixosSystem {
+	    #      inherit system;
+	    #      packages.x86_64-linux.default = self.nixosConfigurations.exampleIso.config.system.build.isoImage;
+	    # #      modules = [
+	    # #        ./system/bootable-stick
+	    # # home-manager.nixosModules.home-manager
+	    # # nix-module
+	    # # (make-home-module (./home/bootable-stick))
+	    # #      ];
+	    #      modules = [
+	    #        ({ pkgs, modulesPath, ... }: {
+	    #          imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix") ];
+	    #          environment.systemPackages = [ pkgs.neovim ];
+	    #        })
+	    #      ];
+
+
+	transducer = nixosSystem {
           inherit system;
-          modules = [
-            ./system/bootable-stick
+	  modules = [
+	    ./system/transducer
 	    home-manager.nixosModules.home-manager
 	    nix-module
-	    (make-home-module (./home/bootable-stick))
-          ];
-        }
+	    (make-home-module (./home/transducer))
+	  ];
+        };
+        };
+
       };
     };
 }
