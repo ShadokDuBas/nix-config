@@ -8,6 +8,7 @@
         enable = true;
         efiSupport = true;
         device = "nodev";
+        configurationLimit = 30;
       };
       efi.canTouchEfiVariables = true;
     };
