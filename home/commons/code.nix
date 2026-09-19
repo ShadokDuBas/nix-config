@@ -3,13 +3,17 @@
 {
 
   home.packages =
-    let mycoq = pkgs.coq.withPackages (ps: with ps; [ equations stdlib metarocq
+    let python = pkgs.python3.withPackages (ps: with ps; 
+    [ jupyter
+      # ipython
+      numpy
+      matplotlib
+      # scikitimage
+      scipy 
+      pandas
     ]); in
-      with pkgs; 
     [
-      mycoq
-      mycoq.ocamlPackages.findlib 
+      python
     ];
 
-  
 }

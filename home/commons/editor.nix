@@ -12,4 +12,10 @@
     ripgrep.enable = true;
 
   };
+
+  home.packages = with pkgs; 
+  [
+    tree-sitter
+  ];
+
 }
