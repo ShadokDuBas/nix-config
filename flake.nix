@@ -64,6 +64,7 @@
 	    #          environment.systemPackages = [ pkgs.neovim ];
 	    #        })
 	    #      ];
+            # };
 
 
 	transducer = nixosSystem {
@@ -74,7 +75,6 @@
 	    nix-module
 	    (make-home-module (./home/transducer))
 	  ];
-        };
         };
 
       };
