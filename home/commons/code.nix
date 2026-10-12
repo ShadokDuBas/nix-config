@@ -11,6 +11,7 @@
       # scikitimage
       scipy 
       pandas
+      networkx
     ]); in
     [
       python

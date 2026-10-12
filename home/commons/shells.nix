@@ -33,6 +33,9 @@
       enable = true;
       enableFishIntegration = true;
       enableNushellIntegration = true;
+      settings = {
+        ai.enabled = false;
+      };
     };
 
     starship = {
