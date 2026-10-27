@@ -21,7 +21,7 @@
       aspellDicts.fr
       poppler-utils # pdfunite / separate
       pandoc
-      zotero
+      # zotero # commented for now because of unsafe denpendency
       typst
     ];
 }

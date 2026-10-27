@@ -14,6 +14,7 @@
       ../commons/basic-programs.nix
       ../commons/graphics.nix
       ../commons/fonts.nix
+      ../commons/battery-management.nix
     ];
 
   networking.hostName = "semigroup"; # Define your hostname.
