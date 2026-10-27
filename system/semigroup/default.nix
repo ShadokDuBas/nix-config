@@ -14,7 +14,7 @@
       ../commons/basic-programs.nix
       ../commons/graphics.nix
       ../commons/fonts.nix
-      ../commons/battery-management.nix
+      # ../commons/battery-management.nix # TLP not compat with gnome’s power-profile-deamon
     ];
 
   networking.hostName = "semigroup"; # Define your hostname.
