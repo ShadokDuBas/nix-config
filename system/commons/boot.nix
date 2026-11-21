@@ -5,11 +5,15 @@
     # Use the systemd-boot EFI boot loader.
     loader = {
       grub = {
-        enable = true;
+        # enable = true;
         efiSupport = true;
         device = "nodev";
         configurationLimit = 30;
       };
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 4;
+        };
       efi.canTouchEfiVariables = true;
     };
     # Use latest kernel.
