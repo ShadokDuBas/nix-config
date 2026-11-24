@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   programs = {
 
     firefox = {
       enable = true;
-      configPath = "$HOME/.config/mozilla/firefox";
+      configPath = "${config.home.homeDirectory}/.config/mozilla/firefox";
     };
 
     alacritty = {
