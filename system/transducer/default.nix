@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../commons/boot.nix
+      ../commons/lanzaboot.nix
       ../commons/bluetooth.nix
       ../commons/misc.nix
       ../commons/locale.nix
@@ -16,7 +16,7 @@
       ../commons/fonts.nix
     ];
 
-  networking.hostName = "semigroup"; # Define your hostname.
+  networking.hostName = "transducer"; # Define your hostname.
 
   # Allow unfree packages (discord, steam)
   # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -67,5 +67,5 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "26.11"; # Did you read the comment?
 }

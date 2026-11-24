@@ -6,8 +6,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { nixpkgs, home-manager, self, ... }:
+  outputs = { nixpkgs, home-manager, lanzaboote, self, ... }:
     let
       # same as:
       # nixosSystem = pkgs.lib.nixosSystem;
@@ -72,6 +76,7 @@
 	  modules = [
 	    ./system/transducer
 	    home-manager.nixosModules.home-manager
+            lanzaboote.nixosModules.lanzaboote
 	    nix-module
 	    (make-home-module (./home/transducer))
 	  ];

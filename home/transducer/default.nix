@@ -14,9 +14,14 @@
       ../commons/mail.nix
       # ../commons/games.nix
       ../commons/science.nix
-      # ../commons/code.nix
+      ../commons/code.nix
       # ../commons/office.nix
     ];
 
-  home.stateVersion = "25.11"; # Never change this
+  home.stateVersion = "26.11"; # Never change this
+
+  home.packages = with pkgs; 
+    [
+      keepassxc
+    ];
 }
