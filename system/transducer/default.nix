@@ -42,6 +42,20 @@
     };
   };
 
+  # Replace the copilot key by ctl
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "0001:0001:6fb3735a" ];
+        settings.main = {
+          "leftshift+leftmeta+f23" = "layer(control)";
+        };
+      };
+    };
+  };
+
+
   # environment.systemPackages = [pkgs.kanata];
 
   # programs.steam = {
