@@ -12,6 +12,7 @@
       scipy 
       pandas
       networkx
+      dbus-python
     ]); in
     [
       python
